@@ -1,0 +1,161 @@
+<html>
+<head>
+	<title>Elanza</title>
+	<link rel="shortcut icon" href="favicon.jpg">
+	<link rel="stylesheet" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+</head>	
+
+<script type="text/javascript">
+	
+	var slideimages = new Array()
+	slideimages[0] = new Image()
+	slideimages[0].src = "cod.jpg"
+	slideimages[1] = new Image()
+	slideimages[1].src = "er.jpg"
+	slideimages[2] = new Image()
+	slideimages[2].src = "13.jpg"
+	slideimages[3] = new Image()
+	slideimages[3].src = "41775.jpg"
+
+$(window).scroll(function() {
+    if($(this).scrollTop() > 50) 
+    {
+        $('.header').addClass('opaque');
+    } else {
+        $('.header').removeClass('opaque');
+    }
+	});
+
+</script>
+<body>
+
+<div class="header">
+	<div class="left-part nav-ele">
+	Elanza
+	</div>
+
+	<div class="right-part nav-ele">
+		<a href="#main">Home</a>
+		<a href="#about">About</a>
+		<a href="#gallery">Gallery</a>
+		<a href="#hindi">&#2361;&#2367;&#2306;&#2342;&#2368;</a>
+		<a href="#contact">Contact</a>
+	</div>
+	
+</div>
+
+<div class="landing" id="main">
+	<p>Welcome to Elanza<br><br>
+	<font size="3rem;">Get ready to be pwned.<br><br><br><br><br><br><br><br><br><br><br></p>
+</div>
+
+<div class="about" id="about">
+	<b>About Us</b><br>
+	<hr width="10%" color="black"><br><br>
+
+	<img src="2.jpg" width="200" align="right">
+	<p id="demo">
+	First person shooter(FPS) games have proven themselves to be one of the most popular genres in video game history. Not only is the gaming community's appetite for unfettered mayhem never ending, but this type of melee has penetrated the consciousness of casual gamers. The commercially successful franchises are now household names: Call of Duty, Doom, Halo, to name just a few.<br>
+
+	Elanza is a global entertainment media brand powered by fan passion specially for FPS Gaming enthusiasts. It is one stop for fun, original multi-platform content. 
+	</p>
+	<br><br>
+
+	Click on radio buttons to change size of text: 
+	<input type="radio" name="a" onClick="document.getElementById('demo').style.fontSize='10px'">10px
+	<input type="radio" name="a" onClick="document.getElementById('demo').style.fontSize='15px'">15px
+	<input type="radio" name="a" onClick="document.getElementById('demo').style.fontSize='20px'">20px
+	<input type="radio" name="a" onClick="document.getElementById('demo').style.fontSize='25px'">25px
+
+</div>
+<div class="card1 parallax">
+	<div class="card">
+		<b>Updates</b><br>
+		<hr width="40%" color="black"><br><br>
+		<ul type="circle">
+			<li>Modern Combat 4: Zero Hour Meltdown Update</li><br>
+			<li>Call of Duty 3: Modern Warfare Released !!</li>
+		</ul>
+	</div>
+
+	<div class="card">
+		<b>Login</b>
+		<hr width="28%" color="black"><br>
+		<input type="text" placeholder="Username" class="input1"><br><br>
+		<input type="password" placeholder="Password" class="input1"><br><br>
+
+		<button value="Login" class="btn" onClick="alert('You have been logged in !!')">Login</button>
+
+	</div>
+
+</div>
+
+<div class="slideshow" id="gallery">
+
+<b>Gallery</b><br>
+<hr width="7%" color="black"><br><br>
+
+<center>
+<img src="cod.jpg" width="40%" id="slide">
+</center>
+
+</div>
+
+<script type="text/javascript">
+	var step=0
+
+	function slideit(){
+		if(!document.images)
+			return
+		document.getElementById('slide').src = slideimages[step].src
+		if(step<3)
+			step++
+		else
+			step=0
+
+		setTimeout("slideit()", 750)
+	}
+
+	slideit()
+</script>
+
+<div class="hindi" id="hindi">
+<center>
+
+<b style="font-size: 45px;">&#2361;&#2367;&#2306;&#2342;&#2368;</b><br>
+<hr width="6%" color="black"><br><br>
+
+<font size="6">&#2360;&#2381;&#2357;&#2366;&#2327;&#2340;</font><br><br></center>
+<font size="4rem">
+Choose background color of your choice:
+	<select id="Colorpic" onChange="ChangeColor();">
+	<option value="Grey">Grey</option>
+	<option value="Orange">Orange</option>
+	<option value="Aqua">Blue</option>
+	<option value="lightgreen">Green</option>
+	</select></font>
+</div>
+
+<script type="text/javascript">
+	function ChangeColor(){
+		var e = document.getElementById('Colorpic');
+		var strUser = e.options[e.selectedIndex].value;
+		document.getElementById('hindi').style.backgroundColor = strUser;
+	}
+</script>
+
+<footer>
+<br>
+	<center>
+		elanza17@gmail.com | fb/elanza | @elanza_fps<br>
+		Copyright &copy; Elanza 2017<br>
+		Webmaster: Varun Sirpal<br>
+	</center>
+<br>
+</footer>
+
+
+</body>
+</html>
